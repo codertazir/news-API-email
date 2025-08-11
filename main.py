@@ -1,15 +1,16 @@
 
 import requests
 from send_email import semail
+import os
 
 topic = 'Politics and Pakistan'
 
-api = "2bb83344f26f4411b6f0c49692b7a9ff"
+api = os.getenv("API")
 url = "https://newsapi.org/v2/everything?" \
       f"q={topic}&" \
-      "from=2025-07-20&" \
+      "from=2025-07-23&" \
       "sortBy=publishedAt&" \
-      "apiKey=2bb83344f26f4411b6f0c49692b7a9ff&" \
+      f"apiKey={api}&" \
       "language=en"
 
 # Make a request
