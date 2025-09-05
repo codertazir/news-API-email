@@ -44,7 +44,7 @@ semail(body)
 topic = 'News'
 url = "https://newsapi.org/v2/everything?" \
       f"q={topic}&" \
-      "from=2025-07-23&" \
+      "from=2025-09-01&" \
       "sortBy=publishedAt&" \
       f"apiKey={api}&" \
       "language=en"
