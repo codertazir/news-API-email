@@ -2,7 +2,10 @@
 import requests
 from send_email import semail
 import os
+from datetime import date, timedelta
 
+
+date_30_days_ago = (date.today() - timedelta(days=30)).strftime("%Y-%m-%d")
 
 # Pakistani Newssss:
 
@@ -13,7 +16,7 @@ topic = 'Politics and Pakistan'
 api = os.getenv("API")
 url = "https://newsapi.org/v2/everything?" \
       f"q={topic}&" \
-      "from=2025-09-01&" \
+      f"from={date_30_days_ago}&" \
       "sortBy=publishedAt&" \
       f"apiKey={api}&" \
       "language=en"
@@ -44,7 +47,7 @@ semail(body)
 topic = 'News'
 url = "https://newsapi.org/v2/everything?" \
       f"q={topic}&" \
-      "from=2025-09-01&" \
+      f"from={date_30_days_ago}&" \
       "sortBy=publishedAt&" \
       f"apiKey={api}&" \
       "language=en"
